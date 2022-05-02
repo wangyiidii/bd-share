@@ -1,0 +1,19 @@
+server:
+  port: 1160
+
+logging:
+  config: classpath:logback/logback-bd-prod.xml
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:/bd/db/data.db
+    password:
+    username:
+
+pigeon:
+  log:
+    path: logs-pro
+    level: info

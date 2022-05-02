@@ -1,0 +1,31 @@
+server:
+  port: 1160
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: '@project.artifactId@'
+  profiles:
+    active: '@profile.active@'
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  # 配置枚举 支持通配符 * 或者 ; 分割
+  type-enums-package: cn.yiidii.pigeon.common.core.base.enumeration;cn.yiidii.bdshare.model.enums
+  configuration:
+    default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+    # log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+#  global-config:
+#    db-config:
+#      insert-strategy: ignored
+  sql-log:
+    enable: true
+
+logging:
+  config: classpath:logback/logback-bd.xml
